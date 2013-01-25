@@ -15,4 +15,8 @@ App.Router = Ember.Router.extend({
   })
 });
 
+//App.ready = function () {
+//    alert("Boo!");
+//}
+
 App.initialize();
