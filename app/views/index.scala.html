@@ -23,21 +23,22 @@
 
             <div>
                 <ul>
-                    {{#each kid in person.kids}}
-                        <li>{{kid}}</li>
+                    {{#each kid in model}}
+                        <li>{{kid.name}}</li>
                     {{/each}}
                 </ul>
                 {{outlet}}
             </div>
 
             <footer>
-                &copy;2013 {{person.name}}'s Publishing, Inc.
+                &copy; 2013 {{person.name}}'s Publishing, Inc.
             </footer>
         </script>
 
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.js")"></script>
-        <script src="@routes.Assets.at("javascripts/handlebars.js")"></script>
-        <script src="@routes.Assets.at("javascripts/ember-1.0.0-pre.4.js")"></script>
-        <script src="@routes.Assets.at("javascripts/app.js")"></script>
+        <script src="@routes.Assets.at("js/libs/jquery-1.9.0.js")"></script>
+        <script src="@routes.Assets.at("js/libs/handlebars.js")"></script>
+        <script src="@routes.Assets.at("js/libs/ember-1.0.0-pre.4.js")"></script>
+        <script src="@routes.Assets.at("js/libs/ember-data.js")"></script>
+        <script src="@routes.Assets.at("js/wtmg.js")"></script>
     </body>
 </html>

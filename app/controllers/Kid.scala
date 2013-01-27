@@ -2,16 +2,17 @@ package controllers
 
 import play.api._
 import play.api.mvc._
-import play.api.libs.json.Json
-
-import Array._
+import libs.json.{JsArray, JsNumber, JsString, JsObject}
 
 object Kid extends Controller {
 
   def list = Action {
-    val kids = Array("Matt", "Aubrey", "Carly", "Delaney")
+    val kidNames = List("Matt", "Aubrey", "Carly", "Delaney")
 
-    Ok(Json.toJson(kids))
+    Ok(toJs(kidNames))
   }
+
+  private def toJs(kidNames : List[String]) = JsObject(List("kids" ->
+    JsArray(kidNames.map(name => JsObject(List("name" -> JsString(name), "age" -> JsNumber(name.length)))))))
 
 }
