@@ -38,12 +38,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="#">{{person.name}}'s Blog</a>
+                        <div>{{#linkTo index class="brand"}}Where'd The Money Go?{{/linkTo}}</div>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li class="active">{{#linkTo index}}Home{{/linkTo}}</li>
+                                <li>{{#linkTo about}}About{{/linkTo}}</li>
+                                <li>{{#linkTo contact}}Contact{{/linkTo}}</li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>
@@ -53,15 +53,10 @@
             <div class="container">
 
                 <header>
-                    <h1>{{person.name}}'s Blog</h1>
+                    <h1>Where'd The Money Go?</h1>
                 </header>
 
                 <div>
-                    <ul>
-                        {{#each kid in model}}
-                        <li>{{kid.name}}</li>
-                        {{/each}}
-                    </ul>
                     {{outlet}}
                 </div>
 
@@ -73,11 +68,24 @@
 
         </script>
 
+        <script type="text/x-handlebars" data-template-name="about">
+            <ul>
+                {{#each kid in model}}
+                <li>{{kid.name}}</li>
+                {{/each}}
+            </ul>
+
+            <p>This is {{person.name}}'s About Page!!!</p>
+        </script>
+
         <script src="@routes.Assets.at("js/libs/jquery-1.9.0.js")"></script>
         <script src="@routes.Assets.at("js/libs/handlebars.js")"></script>
         <script src="@routes.Assets.at("js/libs/ember-1.0.0-pre.4.js")"></script>
         <script src="@routes.Assets.at("js/libs/ember-data.js")"></script>
         <script src="@routes.Assets.at("js/libs/bootstrap.js")"></script>
+        <script src="@routes.Assets.at("js/app.js")"></script>
+        <script src="@routes.Assets.at("js/person.js")"></script>
+        <script src="@routes.Assets.at("js/about.js")"></script>
         <script src="@routes.Assets.at("js/wtmg.js")"></script>
     </body>
 </html>
