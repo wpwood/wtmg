@@ -70,12 +70,18 @@
 
         <script type="text/x-handlebars" data-template-name="about">
             <ul>
-                {{#each kid in model}}
+                {{#each kid in controller}}
                 <li>{{kid.name}}</li>
                 {{/each}}
             </ul>
+        </script>
 
-            <p>This is {{person.name}}'s About Page!!!</p>
+        <script type="text/x-handlebars" data-template-name="contact">
+            <ul>
+                {{#each kid in controller}}
+                <li>{{kid.name}}</li>
+                {{/each}}
+            </ul>
         </script>
 
         <script src="@routes.Assets.at("js/libs/jquery-1.9.0.js")"></script>
@@ -86,6 +92,7 @@
         <script src="@routes.Assets.at("js/app.js")"></script>
         <script src="@routes.Assets.at("js/person.js")"></script>
         <script src="@routes.Assets.at("js/about.js")"></script>
+        <script src="@routes.Assets.at("js/contact.js")"></script>
         <script src="@routes.Assets.at("js/wtmg.js")"></script>
     </body>
 </html>

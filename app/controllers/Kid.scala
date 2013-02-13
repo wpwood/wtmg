@@ -7,12 +7,12 @@ import libs.json.{JsArray, JsNumber, JsString, JsObject}
 object Kid extends Controller {
 
   def list = Action {
-    val kidNames = List("Matt", "Aubrey", "Carly", "Delaney")
+    val kids = List((1, "Matt", 20), (2, "Aubrey", 19), (3, "Carly", 15), (4, "Delaney", 12))
 
-    Ok(toJs(kidNames))
+    Ok(toJs(kids))
   }
 
-  private def toJs(kidNames : List[String]) = JsObject(List("kids" ->
-    JsArray(kidNames.map(name => JsObject(List("name" -> JsString(name), "age" -> JsNumber(name.length)))))))
+  private def toJs(kids : List[(Int, String, Int)]) = JsObject(List("kids" ->
+    JsArray(kids.map(kid => JsObject(List("id" -> JsNumber(kid._1), "name" -> JsString(kid._2), "age" -> JsNumber(kid._3)))))))
 
 }

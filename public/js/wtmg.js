@@ -1,29 +1,25 @@
-Wtmg.Store = DS.Store.extend({
+App.Store = DS.Store.extend({
   revision: 11,
   adapter: DS.RESTAdapter.create()
 });
 
-Wtmg.Kid = DS.Model.extend({
+App.Kid = DS.Model.extend({
   name: DS.attr('string'),
   age: DS.attr('number')
 });
 
-Wtmg.ApplicationController = Ember.Controller.extend({
-  person: Wtmg.Person.create({firstName: "Bill", lastName: "Woodward"})
+App.ApplicationController = Ember.Controller.extend({
+  person: App.Person.create({firstName: "Bill", lastName: "Woodward"})
 });
 
-Wtmg.ApplicationView = Ember.View.extend({
-  templateName: 'application'
-});
-
-Wtmg.Router.reopen({
+App.Router.reopen({
   location: "history"
 });
 
-Wtmg.Router.map(function () {
-  this.route("index", {path: "/"})
-  this.route("about", {path: "/about"})
-  this.route("contact", {path: "/contact"})
+App.Router.map(function () {
+  this.resource("index", {path: "/"});
+  this.resource("about", {path: "/about"});
+  this.resource("contact", {path: "/contact"});
 });
 
-Wtmg.initialize();
+App.initialize();

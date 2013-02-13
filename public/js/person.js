@@ -1,4 +1,4 @@
-Wtmg.Person = Ember.Object.extend({
+App.Person = Ember.Object.extend({
   firstName: null,
   lastName: null,
   name: function() {

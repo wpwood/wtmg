@@ -1,1 +1,1 @@
-var Wtmg = Ember.Application.create();
+var App = Ember.Application.create();

@@ -1,5 +1,7 @@
-Wtmg.AboutRoute = Ember.Route.extend({
+App.AboutRoute = Ember.Route.extend({
   model: function () {
-    return Wtmg.Kid.find()
+    return App.Kid.find();
   }
 });
+
+App.AboutController = Ember.ArrayController.extend();
