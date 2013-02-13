@@ -18,7 +18,9 @@ App.Router.reopen({
 
 App.Router.map(function () {
   this.resource("index", {path: "/"});
-  this.resource("about", {path: "/about"});
+  this.resource("about", {path: "/about"}, function() {
+    this.resource("kid", {path: ":kid_id"});
+  });
   this.resource("contact", {path: "/contact"});
 });
 
