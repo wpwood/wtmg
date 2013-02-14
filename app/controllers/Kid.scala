@@ -6,9 +6,9 @@ import libs.json.{JsArray, JsNumber, JsString, JsObject}
 
 object Kid extends Controller {
 
-  def list = Action {
-    val kids = List((1, "Matt", 20), (2, "Aubrey", 19), (3, "Carly", 15), (4, "Delaney", 12))
+  var kids = List((1, "Matt", 20), (2, "Aubrey", 19), (3, "Carly", 15), (4, "Delaney", 12))
 
+  def list = Action {
     Ok(toJs(kids))
   }
 
