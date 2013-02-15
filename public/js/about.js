@@ -4,4 +4,9 @@ App.AboutRoute = Ember.Route.extend({
   }
 });
 
-App.AboutController = Ember.ArrayController.extend();
+App.AboutController = Ember.ArrayController.extend({
+    name: "",
+    add: function(name) {
+        alert(name);
+    }
+});

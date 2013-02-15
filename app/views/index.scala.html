@@ -74,7 +74,7 @@
                 <li>{{#linkTo "kid" kid}}{{kid.name}}{{/linkTo}}</li>
                 {{/each}}
             </ul>
-            <input type="text" name="name"/><input type="number" name="age"/><button {{action "add"}}>Add</button>
+            {{view Ember.TextField valueBinding="About.name"}}<button {{action "add"}}>Add</button>
             <hr/>
             {{ outlet }}
         </script>
