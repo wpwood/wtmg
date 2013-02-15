@@ -1,8 +1,7 @@
 package controllers
 
-import play.api._
 import play.api.mvc._
-import libs.json.{JsArray, JsNumber, JsString, JsObject}
+import play.api.libs.json._
 
 object Kid extends Controller {
 
@@ -12,7 +11,7 @@ object Kid extends Controller {
     Ok(toJs(kids))
   }
 
-  private def toJs(kids : List[(Int, String, Int)]) = JsObject(List("kids" ->
-    JsArray(kids.map(kid => JsObject(List("id" -> JsNumber(kid._1), "name" -> JsString(kid._2), "age" -> JsNumber(kid._3)))))))
+  private def toJs(kids : List[(Int, String, Int)]) = Json.obj("kids" ->
+    kids.map(kid => Json.obj("id" -> kid._1, "name" -> kid._2, "age" -> kid._3)))
 
 }
