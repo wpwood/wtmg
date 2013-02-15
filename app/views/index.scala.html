@@ -69,12 +69,20 @@
         </script>
 
         <script type="text/x-handlebars" data-template-name="about">
-            <ul>
-                {{#each kid in controller}}
-                <li>{{#linkTo "kid" kid}}{{kid.name}}{{/linkTo}}</li>
-                {{/each}}
-            </ul>
-            {{view Ember.TextField valueBinding="About.name"}}<button {{action "add"}}>Add</button>
+            <div class="well well-small">
+                <ul>
+                    {{#each kid in controller}}
+                    <li>{{#linkTo "kid" kid}}{{kid.name}}{{/linkTo}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="well well-large">
+                <form class="navbar-form pull-left">
+                    {{view Ember.TextField valueBinding="name" placeholder="Who's This?" class="span2"}}
+                    {{view Ember.TextField valueBinding="age" placeholder="Age?" class="span1"}}
+                    <a href=""#" {{action "add"}} class="btn">Add</a>
+                </form>
+            </div>
             <hr/>
             {{ outlet }}
         </script>
@@ -88,14 +96,16 @@
         </script>
 
         <script type="text/x-handlebars" data-template-name="kid">
-            <ul>
-                <li>ID: {{id}}</li>
-                <li>Name: {{name}}</li>
-                <li>Age: {{age}}</li>
-            </ul>
+            <div class="well well-small">
+                <ul>
+                    <li>ID: {{id}}</li>
+                    <li>Name: {{name}}</li>
+                    <li>Age: {{age}}</li>
+                </ul>
+            </div>
         </script>
 
-        <script src="@routes.Assets.at("js/libs/jquery-1.9.0.js")"></script>
+        <script src="@routes.Assets.at("js/libs/jquery-1.8.3.js")"></script>
         <script src="@routes.Assets.at("js/libs/handlebars.js")"></script>
         <script src="@routes.Assets.at("js/libs/ember-1.0.0-pre.4.js")"></script>
         <script src="@routes.Assets.at("js/libs/ember-data.js")"></script>

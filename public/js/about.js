@@ -5,8 +5,9 @@ App.AboutRoute = Ember.Route.extend({
 });
 
 App.AboutController = Ember.ArrayController.extend({
-    name: "",
-    add: function(name) {
-        alert(name);
+    add: function() {
+        console.log(this.get("name") + ", " + this.get("age"));
+        this.set("name", "");
+        this.set("age", "");
     }
 });
