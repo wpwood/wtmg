@@ -75,12 +75,10 @@
                     <li>{{#linkTo "kid" kid}}{{kid.name}}{{/linkTo}}</li>
                     {{/each}}
                 </ul>
-            </div>
-            <div class="well well-large">
-                <form class="navbar-form pull-left">
+                <form class="form-inline">
                     {{view Ember.TextField valueBinding="name" placeholder="Who's This?" class="span2"}}
                     {{view Ember.TextField valueBinding="age" placeholder="Age?" class="span1"}}
-                    <a href=""#" {{action "add"}} class="btn">Add</a>
+                    <a href="#" {{action "add"}} class="btn">Add</a>
                 </form>
             </div>
             <hr/>
