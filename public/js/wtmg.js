@@ -1,8 +1,3 @@
-App.Store = DS.Store.extend({
-  revision: 11,
-  adapter: DS.RESTAdapter.create()
-});
-
 App.Kid = DS.Model.extend({
   name: DS.attr('string'),
   age: DS.attr('number')

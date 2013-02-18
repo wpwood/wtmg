@@ -8,7 +8,10 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # REST
 GET     /kids                       controllers.Kid.list()
+POST    /kids                       controllers.Kid.create()
 
 # Home page
 GET     /                           controllers.Application.index(resource = "/")
 GET     /*resource                  controllers.Application.index(resource)
+
+
