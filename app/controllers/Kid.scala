@@ -21,7 +21,7 @@ object Kid extends Controller {
     request.body.validate[(String, Int)].map{
       case (name, age) => {
         kids = kids :+ (kids.length + 1, name, age)
-        Ok("Hello " + name + ", you're "+age)
+        Ok(toJs(kids))
       }
     }.recoverTotal{
       e => BadRequest("Detected error:"+ JsError.toFlatJson(e))
