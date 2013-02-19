@@ -1,6 +1,23 @@
 App.Kid = DS.Model.extend({
   name: DS.attr('string'),
-  age: DS.attr('number')
+  age: DS.attr('number'),
+
+  didUpdateRecord: function(store, type, record, json) {
+    debugger;
+  }
+});
+
+App.Store = DS.Store.extend({
+  revision: 11,
+  adapter: DS.RESTAdapter.create({
+    mappings: {
+      kids: 'App.Kid'
+    }
+  })
+});
+
+App.reopen({
+  store: App.Store.create()
 });
 
 App.ApplicationController = Ember.Controller.extend({
