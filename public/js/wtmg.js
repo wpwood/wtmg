@@ -6,6 +6,7 @@ App.Kid = DS.Model.extend({
 App.Store = DS.Store.extend({
   revision: 11,
   adapter: DS.RESTAdapter.create({
+    namespace: 'api/v1.0',
     mappings: {
       kids: 'App.Kid'
     }
