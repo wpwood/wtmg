@@ -3,13 +3,14 @@ App.Kid = DS.Model.extend({
   age: DS.attr('number')
 });
 
+DS.RESTAdapter.configure('App.Kid', {
+  sideloadAs: 'kids'
+});
+
 App.Store = DS.Store.extend({
   revision: 11,
   adapter: DS.RESTAdapter.create({
-    namespace: 'api/v1.0',
-    mappings: {
-      kids: 'App.Kid'
-    }
+    namespace: 'api/v1.0'
   })
 });
 
