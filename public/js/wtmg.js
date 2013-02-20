@@ -1,10 +1,6 @@
 App.Kid = DS.Model.extend({
   name: DS.attr('string'),
-  age: DS.attr('number'),
-
-  didUpdateRecord: function(store, type, record, json) {
-    debugger;
-  }
+  age: DS.attr('number')
 });
 
 App.Store = DS.Store.extend({
