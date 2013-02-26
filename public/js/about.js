@@ -15,9 +15,19 @@ App.AboutController = Ember.ArrayController.extend({
       age: this.get('age')
     });
 
-    App.store.commit();
+    App.get('store').commit();
 
     this.set("name", "");
     this.set("age", "");
-  }
+  },
+
+  sortProperties: ['name'],
+
+  sortAscending: true,
+
+  filteredContent: (function() {
+    return this.get('arrangedContent').filter(function(item, index) {
+      return item.get('id') !== null;
+    });
+  }).property('content.@each')
 });

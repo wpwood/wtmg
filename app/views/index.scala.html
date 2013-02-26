@@ -71,7 +71,7 @@
         <script type="text/x-handlebars" data-template-name="about">
             <div class="well well-small">
                 <ul>
-                    {{#each kid in controller}}
+                    {{#each kid in filteredContent}}
                     <li>{{#linkTo "kid" kid}}{{kid.name}}{{/linkTo}}</li>
                     {{/each}}
                 </ul>
