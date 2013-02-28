@@ -15,7 +15,7 @@ App.AboutController = Ember.ArrayController.extend({
       age: this.get('age')
     });
 
-    App.get('store').commit();
+    this.get('store').commit();
 
     this.set("name", "");
     this.set("age", "");

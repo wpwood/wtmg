@@ -14,10 +14,6 @@ App.Store = DS.Store.extend({
   })
 });
 
-App.reopen({
-  store: App.Store.create()
-});
-
 App.ApplicationController = Ember.Controller.extend({
   person: App.Person.create({firstName: "Bill", lastName: "Woodward"})
 });
