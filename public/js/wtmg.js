@@ -8,7 +8,7 @@ DS.RESTAdapter.configure('App.Kid', {
 });
 
 App.Store = DS.Store.extend({
-  revision: 11,
+  revision: 12,
   adapter: DS.RESTAdapter.create({
     namespace: 'api/v1.0'
   })
@@ -30,4 +30,4 @@ App.Router.map(function () {
   this.resource("contact", {path: "/contact"});
 });
 
-App.initialize();
+//App.initialize();
