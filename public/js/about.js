@@ -1,6 +1,6 @@
 App.AboutRoute = Ember.Route.extend({
   model: function () {
-    return App.Kid.find();
+    return App.Kid.findAll();
   }
 });
 
@@ -23,11 +23,5 @@ App.AboutController = Ember.ArrayController.extend({
 
   sortProperties: ['name'],
 
-  sortAscending: true,
-
-  filteredContent: (function() {
-    return this.get('arrangedContent').filter(function(item, index) {
-      return item.get('id') !== null;
-    });
-  }).property('content.@each')
+  sortAscending: true
 });
